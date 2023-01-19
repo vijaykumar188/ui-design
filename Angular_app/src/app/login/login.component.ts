@@ -12,24 +12,24 @@ import { UserService } from '../services/user.service';
 export class LoginComponent {
 
   public loginForm !: FormGroup
-  
-constructor(private router:Router, private formbuilder:FormBuilder, private http:HttpClient, private userservice:UserService){}
- 
 
-
-ngOnInit(){
-  
-  this.loginForm=this.formbuilder.group({
-    email:['',Validators.compose([Validators.required,Validators.email])],
-    password:['',Validators.required]
-  })
-}
-
-submit(){
+  constructor(private router: Router, private formbuilder: FormBuilder, private http: HttpClient, private userservice: UserService) { }
 
 
 
-  
+  ngOnInit() {
+
+    this.loginForm = this.formbuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.required]
+    })
+  }
+
+  submit() {
+
+
+
+
     this.router.navigate(['/dashboard'])
   }
 
@@ -41,6 +41,6 @@ submit(){
   //     console.log(res)
 
   //   })
-  }
+}
 
 
