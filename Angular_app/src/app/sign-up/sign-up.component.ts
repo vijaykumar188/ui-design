@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,9 +9,17 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userservice: UserService ) { }
 
   signin() {
     this.router.navigate(['/login'])
+  }
+
+  signUp(){
+
+    //this.userservice.addUsers().subscribe( res => {
+
+    //})
+
   }
 }

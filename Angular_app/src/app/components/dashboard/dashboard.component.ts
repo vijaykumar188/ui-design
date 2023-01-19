@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService,private router: Router){}
 
   headers = ["id","name", "tech", "sub"]
   tabledata : any= []
@@ -106,5 +107,9 @@ export class DashboardComponent {
     
   
     
+  }
+
+  signout(){
+    this.router.navigate(['/login'])
   }
 }
