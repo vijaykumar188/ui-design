@@ -25,7 +25,7 @@ export class LoginComponent {
     })
   }
 
-  submit() {
+  signin() {
 
 
 
@@ -33,14 +33,11 @@ export class LoginComponent {
     this.router.navigate(['/dashboard'])
   }
 
+  signup() {
+    this.router.navigate(['/signup'])
+  }
 
-  // getUser(){
-  //   this.userservice.getUsers().subscribe(res => {
-
-
-  //     console.log(res)
-
-  //   })
+  
 }
 
 

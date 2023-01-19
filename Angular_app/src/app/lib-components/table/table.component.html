@@ -1,0 +1,26 @@
+<table class="table table-striped table-bordered">
+    <tbody class="table-group-divider">
+        <tr>
+
+
+            <th *ngFor="let column of header" class="tableheader">
+                {{ column }}<br>
+
+            </th>
+
+        </tr>
+    
+        <tbody class="table-group-divider">
+
+
+        <tr *ngFor="let data of tableData">
+            <td *ngFor="let column of header " class="tabledata" (click)="onrowClick()">
+                {{ data[column] }}
+
+
+            </td>
+
+        </tr>
+
+
+</table>

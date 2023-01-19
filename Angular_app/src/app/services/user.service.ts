@@ -17,6 +17,6 @@ export class UserService {
   getUsers() {
 
 
-    return this.httpClient.get(environment.user.BASE_URL);
+    return this.httpClient.get(environment.details.USER_URL);
   }
 }
