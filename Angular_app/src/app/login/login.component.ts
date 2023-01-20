@@ -18,13 +18,17 @@ export class LoginComponent {
 
 
   ngOnInit() {
-
+    
     this.loginForm = this.formbuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.required]
     })
   }
 
+
+  email='';
+  password='';
+  
   signin() {
 
 
@@ -36,7 +40,17 @@ export class LoginComponent {
   signup() {
     this.router.navigate(['/signup'])
   }
+  onSubmit(){
 
+
+    console.log('Email:',this.email);
+    console.log('password:',this.password);
+
+    this.router.navigate(['/dashboard'])
+   
+
+   
+  }
   
 }
 

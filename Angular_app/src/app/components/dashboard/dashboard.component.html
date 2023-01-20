@@ -1,17 +1,17 @@
-
 <div class="container">
     <h1 class="title">Dashboard</h1>
     <div class="button2">
-        <button type="button" class="btn btn-primary btn-lg" (click)="signout()">sign
+        <button type="button" class="btn btn-danger btn-lg" (click)="signout()">sign
             out</button>
     </div>
 </div>
-<!-- <div class="button2">
-    <button type="button" class="btn btn-primary btn-lg" (click)="signout()">sign
-        out</button>
-</div> -->
+
+
+
+<app-card [card]="card"></app-card>
+
 <div class="table">
     <app-table tableTitle="Survey results" totalTableDataCount="0" [header]="headers" [tableData]="tabledata">
 
     </app-table>
-    </div>
+</div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-card',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+
+  constructor(private userService: UserService) { }
+
+  @Input() card: any = [];
+  ngOnInit() {
+
+  }
+
+
 
 }

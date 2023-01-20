@@ -1,1 +1,7 @@
-<p>card works!</p>
+<div class="card" *ngFor="let cards of card">
+  <div class="card-header bg-warning">{{cards.Header}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{cards.title}}</h5>
+    <p class="card-text">{{cards.text}}</p>
+  </div>
+</div>

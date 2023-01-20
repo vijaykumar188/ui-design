@@ -8,83 +8,21 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  constructor(private userService:UserService,private router: Router){}
 
-  headers = ["id","name", "tech", "sub"]
-  tabledata : any= []
+  constructor(private userService: UserService, private router: Router) { }
 
-    // {
-    //   ID: "1",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "2",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "3",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "1",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "2",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    // ID: "1",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "2",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "1",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
-    // {
-    //   ID: "2",
-    //   NAME: "4ft",
-    //   AGE: "2",
-    //   GENDER: "MALE",
-    //   COUNTRY: "INDIA"
-    // },
+  headers = ["sr_no", "name", "tech", "sub"]
+  tabledata: any = []
+  card: any = []
 
-  //]
-  ngOnInit(){
+
+  ngOnInit() {
     this.getUserList();
-
+    this.getCardList();
   }
 
-   getUserList(){
-  
+  getUserList() {
+
 
     this.userService.getUsers().subscribe(res => {
 
@@ -93,23 +31,19 @@ export class DashboardComponent {
     })
   }
 
-    addUserList(){
-     
-    
-        // this.userService.addUsers(user).subscribe(res => {
-    
-        //   console.log(res);
-        //   this.tabledata = res;
-        //})
 
-    
-  
-    
-  
-    
+
+  getCardList() {
+
+
+    this.userService.getCards().subscribe(res => {
+
+      console.log(res);
+      this.card = res;
+    })
   }
 
-  signout(){
-    this.router.navigate(['/login'])
+  signout() {
+    this.router.navigate(['/login']);
   }
 }
