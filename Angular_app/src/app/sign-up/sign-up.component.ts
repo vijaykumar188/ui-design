@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,17 +10,12 @@ import { UserService } from '../services/user.service';
 })
 export class SignUpComponent {
 
-  constructor(private router: Router, private userservice: UserService ) { }
+  constructor(private router: Router, private userservice: UserService ,private toastr:ToastrService) { }
 
-  signin() {
-    this.router.navigate(['/login'])
-  }
+  
 
   signUp(){
-
-    //this.userservice.addUsers().subscribe( res => {
-
-    //})
-
-  }
+    this.toastr.success('User Added Success', '');
+    this.router.navigate(['/login'])
+    }
 }

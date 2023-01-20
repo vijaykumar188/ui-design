@@ -1,7 +1,11 @@
 <div class="card" *ngFor="let cards of card">
   <div class="card-header bg-warning">{{cards.Header}}</div>
   <div class="card-body">
+    <div class="contaier">
     <h5 class="card-title">{{cards.title}}</h5>
+    <div class="number">{{cards.number}}</div>
+  </div>
+
     <p class="card-text">{{cards.text}}</p>
   </div>
 </div>

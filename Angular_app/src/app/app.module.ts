@@ -12,6 +12,10 @@ import { TableComponent } from './lib-components/table/table.component';
 import { CardComponent } from './lib-components/card/card.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
